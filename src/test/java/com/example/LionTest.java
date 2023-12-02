@@ -1,8 +1,6 @@
 package com.example;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -16,8 +14,6 @@ import static org.junit.Assert.assertThrows;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-    @Rule
-    public ExpectedException expectedEx = ExpectedException.none();
 
     @Mock
     Feline feline;
@@ -40,7 +36,7 @@ public class LionTest {
     }
 
     @Test
-    public void LionThrowsExceptionTest() {
+    public void lionThrowsExceptionTest() {
         assertThrows("Используйте допустимые значения пола животного - самей или самка", Exception.class, () -> new Lion("InvalidSex", feline));
 
     }
